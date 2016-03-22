@@ -16,6 +16,8 @@ class ListingsController < ApplicationController
   # POST /listings
   def create
     @listing = Listing.new(listing_params)
+    @listing.user = User.find(listing_params[:user_id]) if listing_params[:user_id].present?
+    @listing.build_user(listing_params[:user]) if listing_params[:user].present?
 
     if @listing.save
       render json: @listing, status: :created, location: @listing
@@ -46,6 +48,6 @@ class ListingsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def listing_params
-      params.require(:listing).permit(:content, :title)
+      params.require(:listing).permit(:content, :title, :user_id, :user)
     end
 end
