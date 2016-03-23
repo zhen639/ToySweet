@@ -14,5 +14,7 @@ test:
 production:
   <<: *default
   database: toysweet_production
-  username: toysweet
-  password: <%= ENV['TOYSWEET_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: 0a2z1u4I
+  host: 10.10.188.209
+  port: 52672
