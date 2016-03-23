@@ -7,4 +7,6 @@ RUN apt-get --assume-yes install redis-server
 
 COPY ./ /app/
 
+EXPOSE 80
+
 CMD ["/app/run"]
