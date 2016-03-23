@@ -11,4 +11,4 @@ COPY ./ /app/
 
 EXPOSE 80
 
-CMD ["sudo /app/run"]
+CMD ["/app/run"]
