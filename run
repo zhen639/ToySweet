@@ -4,8 +4,6 @@ redis-server --daemonize yes
 
 cd /app/
 
-bundle install
-
 export SECRET_KEY_BASE="$(RAILS_ENV=production rake secret)"
 
 RAILS_ENV=production rake assets:precompile
